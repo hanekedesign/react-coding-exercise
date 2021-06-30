@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# The Graph Epochs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React app interview challenge. Please fork this repo, and push your code to a branch in your forked repo (following the instructions below).
 
-## Available Scripts
+In this exercise you will create a spacex launch table that has sorting, search and/or pagination. Data will be available at the endpoint provided in the .env file. _Note_: It is not required to finish implementing all the features. 
 
-In the project directory, you can run:
+Designs can be found [here](https://invis.io/6WZZK4QUGFZ).
 
-### `yarn start`
+1. You can find the playground to see the schema and make queries [here](https://api.spacex.land/graphql/).
+2. For this challenge we will query the Entity called `LanchesPast`.
+3. After you get all of the past launches , render them in a table with the columns as in Designs.
+4. All columns should be sortable in `asc/desc` order. Default order should be by Launch's `launch_year`. Make use of GraphQL queries.
+5. Search should only be implemented for Launch's `mission_name`. Make sure to use a GraphQL query.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Notes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Make sure to implement the UI/UX according to the Designs provided. We highly value attention to detail.
+- Please use Apollo client with hooks to query the data (packages should already be installed - check `package.json`).
 
-### `yarn test`
+# Setup and Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork this repo `git@github.com:edgeandnode/interview-challenge.git`
+2. Make sure you are inside of the repo you just cloned, by running `cd interview-challenge`
+3. Run `yarn` to install all dependencies
+4. Run `yarn dev` to start the app
+5. Open `http://localhost:4000` in your browser
