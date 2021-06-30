@@ -7,7 +7,7 @@ In this exercise you will create a spacex launch table that has sorting, search 
 Designs can be found [here](https://invis.io/6WZZK4QUGFZ).
 
 1. You can find the playground to see the schema and make queries [here](https://api.spacex.land/graphql/).
-2. For this challenge we will query the Entity called `LanchesPast`.
+2. For this challenge we will query the Entity called `launchesPast`.
 3. After you get all of the past launches , render them in a table with the columns as in Designs.
 4. All columns should be sortable in `asc/desc` order. Default order should be by Launch's `launch_year`. Make use of GraphQL queries.
 5. Search should only be implemented for Launch's `mission_name`. Make sure to use a GraphQL query.
