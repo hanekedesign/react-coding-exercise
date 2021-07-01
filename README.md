@@ -1,4 +1,4 @@
-# The Graph Epochs
+# The Graph SpaceX
 
 This is a React app interview challenge. Please fork this repo, and push your code to a branch in your forked repo (following the instructions below).
 
