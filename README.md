@@ -2,7 +2,7 @@
 
 This is a React app interview challenge. Please fork this repo, and push your code to a branch in your forked repo (following the instructions below).
 
-In this exercise you will create a spacex launch table that has sorting, search and/or pagination. Data will be available at the endpoint provided in the .env file. _Note_: It is not required to finish implementing all the features. 
+In this exercise you will create a spacex launch table that has sorting, search and pagination. Data will be available at the endpoint provided in the .env file. _Note_: It is not required to finish implementing all the features. 
 
 Designs can be found [here](https://invis.io/6WZZK4QUGFZ).
 
