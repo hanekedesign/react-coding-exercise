@@ -4,6 +4,9 @@ This is a React app interview challenge. Please fork this repo, and push your co
 
 In this exercise you will create a spacex launch table that has sorting, search and pagination. Data will be available at the endpoint provided in the .env file. _Note_: It is not required to finish implementing all the features. 
 
+First off, look at the [protype](https://xd.adobe.com/view/ce0869f5-92d2-45f6-8ac4-774275ee78e0-9b5b/?fullscreen) to see what the end result should look like.
+
+Designs can be found [here](https://zpl.io/VqzRXd6)
 
 1. You can find the playground to see the schema and make queries [here](https://api.spacex.land/graphql/).
 2. For this challenge we will query the Entity called `launchesPast`.
