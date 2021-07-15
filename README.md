@@ -16,7 +16,7 @@ Designs can be found [here](https://zpl.io/VqzRXd6)
 
 # Notes
 
-- There's is no set design for this. Please use your best judgement to style the table, search, pagination in a presentable way.
+- Make sure to implement the UI/UX according to the Designs provided. We highly value attention to detail.
 - Please use Apollo client with hooks to query the data (packages should already be installed - check `package.json`).
 
 # Setup and Development
