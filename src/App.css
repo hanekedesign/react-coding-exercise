@@ -1,38 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .App {
-  text-align: center;
+  min-width: 1366px;
+  min-height: 768px;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./images/background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page-content {
+  min-height: 634px;
+  height: 82vh;
+  min-width: 990px;
+  width: 72.7%;
+  position: relative;
+  top: 59.3px;
+  left: 400px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+}
+.title-container {
+  height: 57px;
+  width: 375.9px;
+}
+form {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  margin-left: 11px;
+}
+.input-container {
+  flex:1;
+  margin-right: 4px;
+  height: 33px;
+  position: relative;
+}
+input {
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 44px;
+  background-color: #193247;
+  color: #f4ddb5;
+  border: none;
+  padding-left: 7.8px;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+.input-container img {
+  position: absolute;
+  top: 2px;
+  right: 15px;
+}
+::placeholder {
+  color: #f4ddb5;
+  font-size: 15px;
+  left: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+input:focus { outline: none; }
+button {
+  height: 33px;
+  border-radius: 44px;
+  background-color: #d14b39;
+  color: #fff;
+  text-align: center;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+.search-btn { width: 25%; }
+button:focus {outline: none;}
+.columns {
+  display: flex;
+}
+.column-title {
+  border-bottom: 1px solid #193247;
+  font-family: 'Goldman', cursive;
+  font-weight: 700;
+  font-size: 15px;
+  color: #193247;
+  padding-left: 10px;
+}
+#mission-name {
+  border-bottom: 4px solid #193247;
+  width: 38.9%;
+}
+#rocket-name {
+  width: 27.5%;
+}
+#rocket-type {
+  width: 18%;
+}
+#launch-year {
+  width: 15%;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.row:hover .cell {
+  background-color: #d14b39;
+  font-weight: 700;
+  color: #fff;
+}
+.cell {
+  height: 70px;
+  border-radius: 14px;
+  background-color: #fdf2dd;
+  display: flex;
   align-items: center;
+  padding-left: 16.5px;
+  font-family: 'Roboto', sans-serif;
+  color: #606060;
+}
+#mission-name-cell {
+  width: 36%;
+}
+#rocket-name-cell {
+  width: 25%;
+}
+#rocket-type-cell {
+  width: 16%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+#launch-year-cell {
+  width: 15%;
+  justify-content: center;
+}
+.page {
+  font-family: 'Roboto', sans-serif;
+  color: #193247;
+  font-weight: 700;
+  margin-top: 18px;
+  margin-right: 23px;
+}
+.pagination-btn {
+  width: 140px;
+  margin-top: 11px;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (min-width: 1400px) {
+  .page-content {
+    left: 25%;
   }
 }
