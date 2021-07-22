@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
 
-.App {
+.MainPage {
   min-width: 1366px;
   min-height: 768px;
   width: 100%;
@@ -82,7 +82,7 @@ button:focus {outline: none;}
 }
 .column-title {
   border-bottom: 1px solid #193247;
-  font-family: 'Goldman', cursive;
+  font-family: 'Goldman';
   font-weight: 700;
   font-size: 15px;
   color: #193247;
@@ -117,15 +117,16 @@ button:focus {outline: none;}
   background-color: #fdf2dd;
   display: flex;
   align-items: center;
-  padding-left: 16.5px;
   font-family: 'Roboto', sans-serif;
   color: #606060;
 }
 #mission-name-cell {
   width: 36%;
+  padding-left: 16.5px;
 }
 #rocket-name-cell {
   width: 25%;
+  padding-left: 16.5px;
 }
 #rocket-type-cell {
   width: 16%;

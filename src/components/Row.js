@@ -1,13 +1,17 @@
 import React from 'react';
+import { Link } from '@reach/router'
 
 function Row(props) {
+  const {mission, rocketName, rocketType, year } = props
   return (
-    <div className="row">
-      <div className="cell" id="mission-name-cell">Neptune ice caves</div>
-      <div className="cell" id="rocket-name-cell">tail wind</div>
-      <div className="cell" id="rocket-type-cell">X-1-255</div>
-      <div className="cell" id="launch-year-cell">2010</div>
-    </div>
+    <Link to="details" style={{textDecoration:'none'}}>
+      <div className="row">
+        <div className="cell" id="mission-name-cell">{mission}</div>
+        <div className="cell" id="rocket-name-cell">{rocketName}</div>
+        <div className="cell" id="rocket-type-cell">{rocketType}</div>
+        <div className="cell" id="launch-year-cell">{year}</div>
+      </div>
+    </Link>
   );
 }
 
