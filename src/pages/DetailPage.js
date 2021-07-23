@@ -28,7 +28,7 @@ function DetailPage(props) {
   return (
     <div className="detail-page">
       <Link to="/">
-        <img className="backbtn" src={backBtn} />
+        <img className="backbtn" alt="back arrow" src={backBtn} />
       </Link>
       <div className="ticket-area">
         <div className="ticket">

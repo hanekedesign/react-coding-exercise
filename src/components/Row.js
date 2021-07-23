@@ -14,7 +14,7 @@ function Row(props) {
           <div className="cell" id="rocket-type-cell">{rocketType}</div>
           <div className="cell" id="launch-year-cell">{year}</div>
         </div>
-      { isHovering && <img src={forward} className="forward-btn" /> }
+      { isHovering && <img src={forward} alt="forward arrow" className="forward-btn" /> }
       </div>
     </Link>
   );

@@ -60,11 +60,11 @@ function MainPage() {
       <div className="page-content">
         <div className="header">
           <div className="title-container">
-            <img className="title" src={spacetours} />
+            <img className="title" src={spacetours} alt="cruises in luxury to exotic space tours" />
           </div>
           <form onSubmit={handleSubmit}>
             <div className="input-container">
-              <img src={rocketship} />
+              <img src={rocketship} alt="" />
               <input
                 type="text"
                 name="search"
