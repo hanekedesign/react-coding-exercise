@@ -1,26 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
 
+@keyframes learn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.app-container {
+  height: 100vh;
+  width: 100%;
+}
 .MainPage {
   min-width: 1366px;
   min-height: 768px;
-  width: 100%;
-  height: 100vh;
-  background-image: url(./images/background.svg);
+  height: 100%;
+  background-image: url(../images/background.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 20px;
 }
 .page-content {
   min-height: 634px;
   height: 82vh;
   min-width: 990px;
-  width: 72.7%;
+  width: 74%;
   position: relative;
   top: 59.3px;
-  left: 400px;
+  left: 330px;
 }
 .header {
-  width: 100%;
+  width: 96%;
   display: flex;
 }
 .title-container {
@@ -34,36 +46,43 @@ form {
   margin-left: 11px;
 }
 .input-container {
-  flex:1;
+  flex: 1;
   margin-right: 4px;
   height: 33px;
   position: relative;
+  width: 100%;
+  border-radius: 44px;
+  background-color: #193247;
+  display: flex;
+  align-items: center;
 }
 input {
-  width: 100%;
+  width: 90%;
   height: 100%;
-  display: block;
   box-sizing: border-box;
-  border-radius: 44px;
   background-color: #193247;
   color: #f4ddb5;
   border: none;
-  padding-left: 7.8px;
+  padding-left: 3.3px;
   font-size: 15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .input-container img {
-  position: absolute;
   top: 2px;
   right: 15px;
+  width: 21.9px;
+  height: 24.8px;
+  margin-left: 7.8px;
 }
 ::placeholder {
   color: #f4ddb5;
   font-size: 15px;
   left: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-input:focus { outline: none; }
+input:focus {
+  outline: none;
+}
 button {
   height: 33px;
   border-radius: 44px;
@@ -71,18 +90,23 @@ button {
   color: #fff;
   text-align: center;
   border: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 15px;
 }
-.search-btn { width: 25%; }
-button:focus {outline: none;}
+.search-btn {
+  width: 25%;
+}
+button:focus {
+  outline: none;
+}
 .columns {
   display: flex;
+  width: 97%;
 }
 .column-title {
   border-bottom: 1px solid #193247;
-  font-family: 'Goldman';
+  font-family: "Goldman";
   font-weight: 700;
   font-size: 15px;
   color: #193247;
@@ -105,11 +129,17 @@ button:focus {outline: none;}
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  width: 100%;
 }
 .row:hover .cell {
   background-color: #d14b39;
   font-weight: 700;
   color: #fff;
+}
+.row-cells {
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
 }
 .cell {
   height: 70px;
@@ -117,27 +147,32 @@ button:focus {outline: none;}
   background-color: #fdf2dd;
   display: flex;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #606060;
 }
 #mission-name-cell {
-  width: 36%;
+  width: 36.8%;
   padding-left: 16.5px;
 }
 #rocket-name-cell {
-  width: 25%;
+  width: 26%;
   padding-left: 16.5px;
 }
 #rocket-type-cell {
-  width: 16%;
+  width: 17%;
   justify-content: center;
 }
 #launch-year-cell {
   width: 15%;
   justify-content: center;
 }
+.forward-btn {
+  animation-name: learn;
+  animation-timing-function: linear;
+  animation-duration: 500ms;
+}
 .page {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #193247;
   font-weight: 700;
   margin-top: 18px;
@@ -147,7 +182,6 @@ button:focus {outline: none;}
   width: 140px;
   margin-top: 11px;
 }
-
 
 @media only screen and (min-width: 1400px) {
   .page-content {

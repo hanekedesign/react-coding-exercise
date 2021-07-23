@@ -1,13 +1,13 @@
-import React from 'react';
-import {Router} from '@reach/router'
-import MainPage from './pages/MainPage';
-import DetailPage from './pages/DetailPage';
-  
+import React from "react";
+import { Router } from "@reach/router";
+import MainPage from "./pages/MainPage";
+import DetailPage from "./pages/DetailPage";
+
 function App() {
   return (
-    <Router>
+    <Router className="app-container">
       <MainPage path="/" />
-      <DetailPage path="details" />
+      <DetailPage path="details/:missionName" />
     </Router>
   );
 }
