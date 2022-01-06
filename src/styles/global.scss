@@ -3,6 +3,17 @@
 * {
   box-sizing: border-box;
 }
+
+html {
+    font-size: 10px; 
+}
+
+@media (max-width: 1366px) { 
+   html { 
+       font-size: calc-vw(10);
+   }
+}
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -12,14 +23,13 @@ body {
 
 .app-container {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
 }
 
 .app-container__content {
-  width: calc-vw(1366);
-  height: calc-vw(768);
+  width: 136.6rem;
+  height: 76.8rem;
   &--main-page {
     background: url("./../backgrounds/main.png");
     background-repeat: no-repeat;
@@ -33,6 +43,6 @@ body {
   }
   @media (max-width: 1366px) {
     width: 100%;
-    height: calc-vw(1080);
+    height: 108rem;
   }
 }
