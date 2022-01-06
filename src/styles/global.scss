@@ -1,3 +1,5 @@
+@import "./functions.scss";
+
 * {
   box-sizing: border-box;
 }
@@ -8,3 +10,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.app-container__content {
+  width: calc-vw(1366);
+  height: calc-vw(768);
+  &--main-page {
+    background: url("./../backgrounds/main.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    position: relative;
+  }
+  &--details {
+    background: url("./../backgrounds/details.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+  @media (max-width: 1366px) {
+    width: 100%;
+    height: calc-vw(1080);
+  }
+}
