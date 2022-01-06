@@ -1,0 +1,24 @@
+.search-banner {
+  display: flex;
+  margin-bottom: 3.04rem;
+}
+
+.search-banner__logo {
+  width: 37.59rem;
+  height: 5.67rem;
+  object-fit: contain;
+}
+
+.search-banner__search-field-wrapper {
+  width: 44.7rem;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 1.09rem;
+  margin-right: 0.4rem;
+}
+
+.search-banner__search-button-wrapper {
+  width: 15.1rem;
+  display: flex;
+  align-items: flex-end;
+}
