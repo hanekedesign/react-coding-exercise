@@ -3,7 +3,9 @@
 .missions-table-header {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   height: 2.3rem;
+  margin-bottom: 1.1rem;
   border-bottom: 0.1rem solid $dark-blue;
 }
 

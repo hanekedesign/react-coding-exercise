@@ -1,0 +1,49 @@
+@import "./../../../../../styles/variables.scss";
+
+.missions-table-content-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  &:hover {
+    .missions-table-content-item {
+      background-color: $dark-orange;
+      &__text {
+        color: $white;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.missions-table-content-item {
+  height: 7rem;
+  padding: 0 1.55rem;
+  display: flex;
+  align-items: center;
+  background-color: $light-sand-yellow;
+  border-radius: 1.4rem;
+
+  &--first {
+    width: 38.3rem;
+  }
+  &--second {
+    width: 27.2rem;
+  }
+  &--third {
+    width: 17.1rem;
+  }
+  &--fourth {
+    width: 15.1rem;
+  }
+}
+
+.missions-table-content-item__text {
+  width: 100%;
+  font-size: 15px;
+  color: $gray;
+  text-align: left;
+  &--centered {
+    text-align: center;
+  }
+}
