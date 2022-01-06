@@ -1,18 +1,29 @@
 @import "./functions.scss";
 
+@font-face {
+  font-family: Goldman;
+  src: url("./../fonts/Goldman-Regular.ttf");
+}
+
+@font-face {
+  font-family: Goldman;
+  src: url("./../fonts/Goldman-Bold.ttf");
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
 
 html {
-    font-size: 10px; 
+  font-size: 10px;
 }
 
-@media (max-width: 1366px) { 
-   html { 
-       font-size: calc-vw(10);
-   }
+@media (max-width: 1366px) {
+  html {
+    font-size: calc-vw(10);
+  }
 }
 
 body {
@@ -21,7 +32,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
 }
 
