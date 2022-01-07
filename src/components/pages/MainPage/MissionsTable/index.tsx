@@ -1,5 +1,9 @@
 import { Dispatch, FC, SetStateAction } from "react";
-import { DataArrayInterface, SortingInterface } from "../../../../interfaces-and-types";
+import {
+  DataArrayInterface,
+  FilteringInterface,
+  SortingInterface,
+} from "../../../../interfaces-and-types";
 import "./index.scss";
 import MissionsTableContent from "./MissionsTableContent";
 import MissionsTableHeader from "./MissionsTableHeader";
@@ -7,20 +11,18 @@ import MissionsTablePagination from "./MissionsTablePagination";
 
 interface MissionsTableProps {
   data: DataArrayInterface;
-  pageOffset: number;
-  setPageOffset: Dispatch<SetStateAction<number>>;
+  filters: FilteringInterface;
+  setFilters: Dispatch<SetStateAction<FilteringInterface>>;
   sorting: SortingInterface;
-  setSorting: Dispatch<
-    SetStateAction<SortingInterface>
-  >;
+  setSorting: Dispatch<SetStateAction<SortingInterface>>;
 }
 
 const MissionsTable: FC<MissionsTableProps> = ({
   data,
-  pageOffset,
-  setPageOffset,
-  sorting, 
-  setSorting
+  filters,
+  setFilters,
+  sorting,
+  setSorting,
 }) => {
   return (
     <>
@@ -30,10 +32,7 @@ const MissionsTable: FC<MissionsTableProps> = ({
       ) : (
         <>
           <MissionsTableContent data={data} />
-          <MissionsTablePagination
-            pageOffset={pageOffset}
-            setPageOffset={setPageOffset}
-          />
+          <MissionsTablePagination filters={filters} setFilters={setFilters} />
         </>
       )}
     </>

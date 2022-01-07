@@ -1,4 +1,3 @@
-import { FC } from "react";
 import BackButton from "../../common/BackButton";
 import Button from "../../common/Button";
 import "./index.scss";

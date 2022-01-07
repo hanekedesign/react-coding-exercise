@@ -1,5 +1,9 @@
 import { gql, useQuery } from "@apollo/react-hooks";
 import { useEffect, useState } from "react";
+import {
+  SortingInterface,
+  FilteringInterface,
+} from "../../../interfaces-and-types";
 import Button from "../../common/Button";
 import "./index.scss";
 import MissionsTable from "./MissionsTable";
@@ -31,25 +35,23 @@ const LAUNCHES = gql`
 `;
 
 const MainPage = () => {
-  const [pageOffset, setPageOffset] = useState<number>(0);
-  const [missionName, setMissionName] = useState<string>("");
-  const [sorting, setSorting] = useState<{
-    sortingColumn: string;
-    order: string;
-  }>({ sortingColumn: "launch_year", order: "DESC" });
+  const [filters, setFilters] = useState<FilteringInterface>({
+    pageOffset: 0,
+    missionName: "",
+  });
+  const [sorting, setSorting] = useState<SortingInterface>({
+    sortingColumn: "launch_year",
+    order: "DESC",
+  });
 
-  useEffect(() => {
-    setPageOffset(0);
-  }, [missionName]);
 
   const { loading, error, data, refetch } = useQuery(LAUNCHES, {
     variables: {
-      pageOffset,
-      missionName,
+      pageOffset: filters.pageOffset,
+      missionName: filters.missionName,
       sortingColumn: sorting.sortingColumn,
       order: sorting.order,
     },
-    skip: missionName && pageOffset ? true : false,
   });
 
   return (
@@ -76,13 +78,10 @@ const MainPage = () => {
           )}
           {data && (
             <>
-              <SearchBanner
-                missionName={missionName}
-                setMissionName={setMissionName}
-              />
+              <SearchBanner filters={filters} setFilters={setFilters} />
               <MissionsTable
-                pageOffset={pageOffset}
-                setPageOffset={setPageOffset}
+                filters={filters}
+                setFilters={setFilters}
                 sorting={sorting}
                 setSorting={setSorting}
                 data={data.launchesPast}

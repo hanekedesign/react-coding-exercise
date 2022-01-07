@@ -1,16 +1,22 @@
 import { Dispatch, FC, SetStateAction } from "react";
+import { FilteringInterface } from "../../../../../interfaces-and-types";
 import Button from "../../../../common/Button";
 import "./index.scss";
 
 interface MissionsTablePaginationProps {
-  pageOffset: number;
-  setPageOffset: Dispatch<SetStateAction<number>>;
+  filters: FilteringInterface;
+  setFilters: Dispatch<SetStateAction<FilteringInterface>>;
 }
 
 const MissionsTablePagination: FC<MissionsTablePaginationProps> = ({
-  pageOffset,
-  setPageOffset,
+  filters,
+  setFilters,
 }) => {
+  const { pageOffset } = filters;
+
+  const setPageOffset = (newOffset: number) => {
+    setFilters({ ...filters, pageOffset: newOffset });
+  };
   return (
     <div className="missions-table-pagination">
       <div className="missions-table-pagination-page">
@@ -45,6 +51,4 @@ const MissionsTablePagination: FC<MissionsTablePaginationProps> = ({
 };
 
 export default MissionsTablePagination;
-function setPage(arg0: number) {
-  throw new Error("Function not implemented.");
-}
+

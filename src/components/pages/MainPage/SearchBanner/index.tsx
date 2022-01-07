@@ -4,15 +4,13 @@ import SearchField from "../../../common/SearchField";
 import "./index.scss";
 import tours from "./tours.png";
 import rocket from "./rocket.svg";
+import { FilteringInterface } from "../../../../interfaces-and-types";
 interface SearchBannerProps {
-  missionName: string;
-  setMissionName: Dispatch<SetStateAction<string>>;
+  filters: FilteringInterface;
+  setFilters: Dispatch<SetStateAction<FilteringInterface>>;
 }
 
-const SearchBanner: FC<SearchBannerProps> = ({
-  missionName,
-  setMissionName,
-}) => {
+const SearchBanner: FC<SearchBannerProps> = ({ filters, setFilters }) => {
   const [searchFieldState, setSearchFieldState] = useState<string>("");
 
   const handleChangeInputValue = (e: { target: { value: string } }) => {
@@ -33,7 +31,7 @@ const SearchBanner: FC<SearchBannerProps> = ({
       <div className="search-banner__search-button-wrapper">
         <Button
           onClick={() => {
-            setMissionName(searchFieldState);
+            setFilters({ ...filters, missionName: searchFieldState });
           }}
         >
           SEARCH

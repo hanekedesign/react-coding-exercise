@@ -2,7 +2,6 @@ export interface SortingInterface {
   sortingColumn: string;
   order: string;
 }
-
 interface DataInterface {
   mission_name: string;
   rocket: {
@@ -14,3 +13,8 @@ interface DataInterface {
 }
 
 export type DataArrayInterface = DataInterface[];
+
+export interface FilteringInterface {
+  pageOffset: number;
+  missionName: string;
+}
