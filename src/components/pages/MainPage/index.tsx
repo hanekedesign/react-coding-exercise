@@ -35,14 +35,19 @@ const MainPage = () => {
   const [sorting, setSorting] = useState<{
     sortingColumn: string;
     order: string;
-  }>({ sortingColumn: "launch_year", order: "ASC" });
+  }>({ sortingColumn: "launch_year", order: "DESC" });
 
   useEffect(() => {
     setPageOffset(0);
   }, [missionName]);
 
   const { loading, error, data } = useQuery(LAUNCHES, {
-    variables: { pageOffset, missionName },
+    variables: {
+      pageOffset,
+      missionName,
+      sortingColumn: sorting.sortingColumn,
+      order: sorting.order,
+    },
     skip: missionName && pageOffset ? true : false,
   });
 

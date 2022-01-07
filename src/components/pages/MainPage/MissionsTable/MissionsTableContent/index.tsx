@@ -2,16 +2,10 @@ import { Dispatch, FC, SetStateAction } from "react";
 import "./index.scss";
 interface MissionsTableContentProps {
   data: any;
-  sorting: { sortingColumn: string; order: string };
-  setSorting: Dispatch<
-    SetStateAction<{ sortingColumn: string; order: string }>
-  >;
 }
 
 const MissionsTableContent: FC<MissionsTableContentProps> = ({
   data,
-  sorting,
-  setSorting,
 }) => {
   return (
     <>

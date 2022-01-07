@@ -23,12 +23,12 @@ const MissionsTable: FC<MissionsTableProps> = ({
 }) => {
   return (
     <>
-      <MissionsTableHeader />
+      <MissionsTableHeader sorting={sorting} setSorting={setSorting} />
       {data && data.length === 0 ? (
         <p className="mission-table-error">No records for searching query</p>
       ) : (
         <>
-          <MissionsTableContent sorting={sorting} setSorting={setSorting} data={data} />
+          <MissionsTableContent data={data} />
           <MissionsTablePagination
             pageOffset={pageOffset}
             setPageOffset={setPageOffset}

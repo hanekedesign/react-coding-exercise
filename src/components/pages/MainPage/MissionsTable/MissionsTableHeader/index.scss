@@ -16,6 +16,7 @@
   color: $dark-blue;
   font-weight: bold;
   position: relative;
+  cursor: pointer;
   &--first {
     width: 38.3rem;
   }
@@ -49,7 +50,6 @@
   width: 1.18rem;
   height: 1.38rem;
   margin-left: 1.6rem;
-  cursor: pointer;
   &--down {
     transform: rotate(180deg);
   }
