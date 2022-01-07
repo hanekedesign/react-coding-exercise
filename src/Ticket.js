@@ -1,4 +1,4 @@
-import { TicketBackground, MainTicket, TicketWrapper, BackArrow, Button, TicketData, MissionName, RocketName, RocketType, LaunchYear, MissionTitle, RocketTitle, RocketTypeTitle, LaunchYearTitle } from "./styles";
+import { TicketBackground, MainTicket, TicketWrapper, BackArrow, Button, TicketData, MissionName, RocketName, RocketType, LaunchYear, MissionTitle, RocketTitle, RocketTypeTitle, LaunchYearTitle, PrintWrap } from "./styles";
 import mainTicket from './img/mainticket.svg';
 import backArrow from './img/arrow-back.svg'
 
@@ -21,7 +21,10 @@ function Ticket(props) {
                     <LaunchYear>{props.ticketdata.launch_year}</LaunchYear>
                     <MainTicket src={mainTicket} />
                 </TicketData>
-                <Button>PRINT TICKET</Button>
+                <PrintWrap>
+                    <Button>PRINT TICKET</Button>
+                </PrintWrap>
+
             </TicketWrapper>
         </TicketBackground>
     )

@@ -1,5 +1,5 @@
-import { Main, Header, Logo, SearchBar, Button, RocketIcon, SearchBarWrapper, Table, TR, TD, Wrapper, Loading, ArrowRight, Labels, SortArrow, MissionLabel, RocketLabel, TypeLabel, YearLabel } from './styles'
-import { useState, useEffect, useCallback } from 'react';
+import { Main, Header, Logo, SearchBar, Button, RocketIcon, SearchBarWrapper, Table, TR, TD, Wrapper, Loading, ArrowRight, Labels, SortArrow, MissionLabel, RocketLabel, TypeLabel, YearLabel, Count } from './styles'
+import { useState, useEffect } from 'react';
 import Ticket from './Ticket';
 import logo from './img/logo.svg';
 import rocket from './img/rocket.svg';
@@ -9,7 +9,7 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
 const GET_MISSIONS = gql`
-query($filter: String!, $age:String!){
+query($filter: String, $age:String){
   launchesPast(find: {mission_name: $filter},sort: "launch_year", order: $age){
     mission_name
     rocket {
@@ -23,48 +23,28 @@ query($filter: String!, $age:String!){
 function App() {
   const [executeSearch, { loading, data }] = useLazyQuery(GET_MISSIONS);
   const [missions, setMissions] = useState();
-  const [originalMissions, setOriginalMissions] = useState();
   const [pageStart, setPageStart] = useState(0);
   const [pageEnd, setPageEnd] = useState(6);
   const [searchFlights, setSearchFlights] = useState('');
+  const [searchClick, setSearchCLick] = useState('');
   const [rowHover, setRowHover] = useState();
   const [isTicket, setTicket] = useState(false);
   const [ticketData, setTicketData] = useState();
   const [isDescending, setDescending] = useState(true);
-  const [isSearched, setSearched] = useState(false);
 
   useEffect(() => {
-    executeSearch({ variables: { filter: searchFlights, age: "desc" } });
+    executeSearch({ variables: { filter: searchClick, age: isDescending ? "desc" : "asc" } });
     setMissions(data?.launchesPast);
-    setOriginalMissions(data?.launchesPast);
-
-  }, [data]);
-
-  const handleInput = useCallback((e) => {
-    setSearchFlights(e.target.value);
-  }, [searchFlights]);
+  }, [data, executeSearch, isDescending, searchClick]);
 
 
-  const handleSearch = useCallback(() => {
+  const handleSearch = () => {
     setPageStart(0);
     setPageEnd(6);
-    executeSearch({ variables: { filter: searchFlights } });
+    setSearchCLick(searchFlights)
+    executeSearch({ variables: { filter: searchClick } });
     setMissions(data?.launchesPast);
-    setSearched(true);
-  }, [searchFlights]);
-
-  const handleOrder = useCallback(() => {
-
-    if (isDescending) {
-      executeSearch({ variables: { filter: isSearched ? searchFlights : '', age: "asc" } })
-    } else {
-      executeSearch({ variables: { filter: isSearched ? searchFlights : '', age: "desc" } })
-    };
-
-    setDescending(!isDescending);
-    console.log(isDescending)
-
-  }, [isDescending])
+  };
 
 
   return (
@@ -76,18 +56,23 @@ function App() {
               <Logo src={logo} />
               <SearchBarWrapper>
                 <RocketIcon src={rocket} />
-                <SearchBar placeholder='Search for flights' onInput={(e) => handleInput(e)} />
+                <SearchBar
+                  placeholder={'Search for flights'}
+                  onInput={(e) => setSearchFlights(e.target.value)}
+                  value={searchFlights}
+                  onKeyPress={(e) => { if (e.key === 'Enter') handleSearch() }} />
               </SearchBarWrapper>
               <Button onClick={handleSearch}>SEARCH</Button>
             </Header>
 
-            <Labels>
-              <MissionLabel>MISSION NAME</MissionLabel>
-              <SortArrow src={arrowDown} flipped={isDescending} onClick={handleOrder} />
+            <Labels onClick={() => setDescending(!isDescending)}>
+              <MissionLabel>
+                MISSION NAME
+                <SortArrow src={arrowDown} flipped={isDescending} />
+              </MissionLabel>
               <RocketLabel>ROCKET NAME</RocketLabel>
               <TypeLabel>ROCKET TYPE</TypeLabel>
               <YearLabel>LAUNCH YEAR</YearLabel>
-
             </Labels>
 
             {!loading && missions ?
@@ -115,7 +100,7 @@ function App() {
               : <Loading>Loading...</Loading>
             }
             <div>
-              <span>{pageEnd / 6}of{missions ? Math.ceil(missions.length / 6) : 0}</span>
+              <Count>{pageEnd / 6}&nbsp;of&nbsp;{missions ? Math.ceil(missions.length / 6) : 0}</Count>
               <Button onClick={() => { setPageStart(pageStart + 6); setPageEnd(pageEnd + 6) }} disabled={pageEnd < missions?.length ? false : true}>LOAD MORE</Button>
             </div>
 
@@ -125,8 +110,6 @@ function App() {
         <Ticket ticketdata={ticketData} goback={setTicket} />
       }
     </div>
-
   );
 }
-
 export default App;
