@@ -162,7 +162,7 @@ position: absolute;
 top: 33%;
 left: 14%;
 font-size: 30px;
-font-family:"Roboto Thin"
+font-family:"Roboto Thin";
 `
 
 export const RocketTitle = styled.div`
@@ -216,30 +216,33 @@ color:#193247;
 
 export const MissionLabel = styled.div`
 width: 34%;
-border-bottom: 4px solid #193247;
+border-bottom:${props => props.picked ? '4px solid #193247' : '1px solid #193247'} ;
 padding: 0px 0 3px 5px;
-border-radius:3px;
 `
 export const SortArrow = styled.img`
 transform:${props => (!props.flipped ? 'rotate(180deg) translateY(-3px)' : ' translateY(3px)')};
 margin-left: 10px;
 cursor:pointer;
+display:${props => props.picked ? '' : 'none'};
 `
 export const RocketLabel = styled.div`
 width: 29%;
 padding: 0px 0 3px 5px;
-border-bottom: 1px solid #193247;
+border-bottom:${props => props.picked ? '4px solid #193247' : '1px solid #193247'};
+
 `
 export const TypeLabel = styled.div`
 width: 17.5%;
 padding: 0px 0 3px 5px;
-border-bottom: 1px solid #193247;
+border-bottom:${props => props.picked ? '4px solid #193247' : '1px solid #193247'};
+
 `
 
 export const YearLabel = styled.div`
 width: 15%;
 padding: 0px 0 3px 5px;
-border-bottom: 1px solid #193247;
+border-bottom:${props => props.picked ? '4px solid #193247' : '1px solid #193247'};
+
 `
 export const SpacerLabel = styled.div`
 width: 2%;

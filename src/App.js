@@ -9,8 +9,8 @@ import { useLazyQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
 const GET_MISSIONS = gql`
-query($filter: String, $age:String){
-  launchesPast(find: {mission_name: $filter},sort: "launch_year", order: $age){
+query($filter: String, $age:String,$column:String){
+  launchesPast(find: {mission_name: $filter},sort: $column, order: $age){
     mission_name
     rocket {
       rocket_name
@@ -31,11 +31,12 @@ function App() {
   const [isTicket, setTicket] = useState(false);
   const [ticketData, setTicketData] = useState();
   const [isDescending, setDescending] = useState(true);
+  const [column, setColumn] = useState("mission_name");
 
   useEffect(() => {
-    executeSearch({ variables: { filter: searchClick, age: isDescending ? "desc" : "asc" } });
+    executeSearch({ variables: { filter: searchClick, age: isDescending ? "desc" : "asc", column: column } });
     setMissions(data?.launchesPast);
-  }, [data, executeSearch, isDescending, searchClick]);
+  }, [data, executeSearch, isDescending, searchClick, column]);
 
 
   const handleSearch = () => {
@@ -66,13 +67,22 @@ function App() {
             </Header>
 
             <Labels onClick={() => setDescending(!isDescending)}>
-              <MissionLabel>
+              <MissionLabel onClick={() => setColumn("mission_name")} picked={column === "mission_name" ? true : false}>
                 MISSION NAME
-                <SortArrow src={arrowDown} flipped={isDescending} />
+                <SortArrow src={arrowDown} flipped={isDescending} picked={column === "mission_name" ? true : false} />
               </MissionLabel>
-              <RocketLabel>ROCKET NAME</RocketLabel>
-              <TypeLabel>ROCKET TYPE</TypeLabel>
-              <YearLabel>LAUNCH YEAR</YearLabel>
+              <RocketLabel onClick={() => setColumn("rocket_name")} picked={column === "rocket_name" ? true : false}>
+                ROCKET NAME
+                <SortArrow src={arrowDown} flipped={isDescending} picked={column === "rocket_name" ? true : false} />
+              </RocketLabel>
+              <TypeLabel onClick={() => setColumn("rocket_type")} picked={column === "rocket_type" ? true : false}>
+                ROCKET TYPE
+                <SortArrow src={arrowDown} flipped={isDescending} picked={column === "rocket_type" ? true : false} />
+              </TypeLabel>
+              <YearLabel onClick={() => setColumn("launch_year")} picked={column === "launch_year" ? true : false}>
+                LAUNCH YEAR
+                <SortArrow src={arrowDown} flipped={isDescending} picked={column === "launch_year" ? true : false} />
+              </YearLabel>
             </Labels>
 
             {!loading && missions ?
