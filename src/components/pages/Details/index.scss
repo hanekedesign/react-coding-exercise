@@ -1,0 +1,77 @@
+@import "./../../../styles/variables.scss";
+
+.details {
+  width: 115.2rem;
+  height: 49rem;
+  margin: 1rem 14.8rem 26.8rem 6.6rem;
+  background-image: url("./ticket.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+.details-back-button {
+  position: absolute;
+  top: 4.5rem;
+  left: -3.55rem;
+}
+
+.details-main {
+  width: 60rem;
+  height: 13rem;
+  position: absolute;
+  top: 14.4rem;
+  left: 15.7rem;
+  color: $sand-yellow;
+}
+
+.details-main__label {
+  font-size: 1.8rem;
+}
+
+.details-main__h2 {
+  font-size: 4rem;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 1.2rem;
+}
+
+.details-main__rocket-info-wrapper {
+  display: flex;
+}
+.details-main__rocket-info {
+  max-width: 16.2rem;
+  margin-right: 6rem;
+}
+
+.details-main__p {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.details-launch {
+  width: 16rem;
+  height: 6rem;
+  position: absolute;
+  top: 10rem;
+  right: 8.7rem;
+  color: $dark-blue;
+}
+
+.details-launch__label {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.details-launch__p {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.details-print {
+  width: 14.1rem;
+  top: 46.3rem;
+  left: calc(100% - 20.2rem);
+  position: absolute;
+}
