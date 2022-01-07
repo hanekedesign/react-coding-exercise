@@ -31,7 +31,7 @@ const SearchBanner: FC<SearchBannerProps> = ({ filters, setFilters }) => {
       <div className="search-banner__search-button-wrapper">
         <Button
           onClick={() => {
-            setFilters({ ...filters, missionName: searchFieldState });
+            setFilters({ pageOffset: 0, missionName: searchFieldState });
           }}
         >
           SEARCH
