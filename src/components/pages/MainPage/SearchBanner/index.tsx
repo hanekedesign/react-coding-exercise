@@ -33,7 +33,6 @@ const SearchBanner: FC<SearchBannerProps> = ({
       <div className="search-banner__search-button-wrapper">
         <Button
           onClick={() => {
-            console.log(searchFieldState)
             setMissionName(searchFieldState);
           }}
         >

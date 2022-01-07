@@ -47,9 +47,6 @@ input:focus {
 .app-container__content {
   width: 136.6rem;
   height: 76.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   &--main-page {
     background-image: url("./../backgrounds/main.png");
     background-repeat: no-repeat;

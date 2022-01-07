@@ -1,7 +1,20 @@
+@import "./../../../styles/variables.scss";
+
 .main-page-content {
   margin: 5.93rem 4.87rem 7.5rem 32.83rem;
   width: 98.9rem;
   height: 63.37rem;
 }
 
+.main-page-loader-error-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
 
+.main-page-error-text {
+  font-size: 4rem;
+  color: $dark-orange;
+}
