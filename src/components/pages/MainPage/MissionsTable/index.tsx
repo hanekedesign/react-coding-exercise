@@ -1,16 +1,17 @@
 import { Dispatch, FC, SetStateAction } from "react";
+import { DataArrayInterface, SortingInterface } from "../../../../interfaces-and-types";
 import "./index.scss";
 import MissionsTableContent from "./MissionsTableContent";
 import MissionsTableHeader from "./MissionsTableHeader";
 import MissionsTablePagination from "./MissionsTablePagination";
 
 interface MissionsTableProps {
-  data: any;
+  data: DataArrayInterface;
   pageOffset: number;
   setPageOffset: Dispatch<SetStateAction<number>>;
-  sorting: { sortingColumn: string; order: string };
+  sorting: SortingInterface;
   setSorting: Dispatch<
-    SetStateAction<{ sortingColumn: string; order: string }>
+    SetStateAction<SortingInterface>
   >;
 }
 

@@ -34,6 +34,9 @@
   font-weight: 300;
   margin: 0;
   margin-bottom: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .details-main__rocket-info-wrapper {
@@ -48,6 +51,17 @@
   font-size: 2rem;
   font-weight: 300;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.details-error-wrapper {
+  padding: 16rem 20rem;
+  .details-error-text {
+    font-size: 4rem;
+    color: $dark-orange;
+  }
 }
 
 .details-launch {

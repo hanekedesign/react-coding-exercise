@@ -6,15 +6,24 @@
   height: 63.37rem;
 }
 
-.main-page-loader-error-wrapper {
+.main-page-loader-error {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   margin-top: 5rem;
+  &--error {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 
-.main-page-error-text {
+.main-page-loader-error__text {
   font-size: 4rem;
   color: $dark-orange;
+}
+
+.main-page-loader-error__btn-wrapper {
+  width: 14.1rem;
 }

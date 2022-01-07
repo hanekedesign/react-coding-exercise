@@ -2,7 +2,7 @@ import { FC } from "react";
 import "./index.scss";
 
 interface SearchFieldProps {
-  icon: any;
+  icon: string | undefined;
   value: string;
   onChange: (e: { target: { value: string } }) => void;
 }

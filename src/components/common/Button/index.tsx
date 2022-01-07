@@ -8,7 +8,7 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = ({ children, onClick, ...props }) => {
   return (
     <button onClick={onClick} className="button" {...props}>
-      {children}
+      <span>{children}</span>
     </button>
   );
 };

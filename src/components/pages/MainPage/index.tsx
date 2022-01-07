@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/react-hooks";
 import { useEffect, useState } from "react";
+import Button from "../../common/Button";
 import "./index.scss";
 import MissionsTable from "./MissionsTable";
 import SearchBanner from "./SearchBanner/index";
@@ -41,7 +42,7 @@ const MainPage = () => {
     setPageOffset(0);
   }, [missionName]);
 
-  const { loading, error, data } = useQuery(LAUNCHES, {
+  const { loading, error, data, refetch } = useQuery(LAUNCHES, {
     variables: {
       pageOffset,
       missionName,
@@ -56,13 +57,21 @@ const MainPage = () => {
       <div className="app-container__content app-container__content--main-page">
         <div className="main-page-content">
           {loading && (
-            <div className="main-page-loader-error-wrapper">
+            <div className="main-page-loader-error">
               <div className="loader"></div>
             </div>
           )}
           {error && (
-            <div className="main-page-loader-error-wrapper">
-              <p className="main-page-error-text">Error</p>
+            <div className="main-page-loader-error main-page-loader-error--error">
+              <p className="main-page-loader-error__text">
+                Error...{" "}
+                {error.graphQLErrors.map(
+                  (el: { message: string }) => el.message
+                )}
+              </p>
+              <div className="main-page-loader-error__btn-wrapper">
+                <Button onClick={() => refetch()}>RETRY</Button>
+              </div>
             </div>
           )}
           {data && (

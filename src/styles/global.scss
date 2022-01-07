@@ -2,13 +2,8 @@
 @import "./variables.scss";
 
 @font-face {
-  font-family: Goldman;
-  src: url("./../fonts/Goldman-Regular.ttf");
-}
-
-@font-face {
-  font-family: Goldman;
-  src: url("./../fonts/Goldman-Bold.ttf");
+  font-family: Roboto;
+  src: url("./../fonts/Roboto-Bold.ttf");
   font-weight: bold;
 }
 
@@ -19,8 +14,8 @@
 
 @font-face {
   font-family: Roboto;
-  src: url("./../fonts/Roboto-Bold.ttf");
-  font-weight: bold;
+  src: url("./../fonts/Roboto-Regular.ttf");
+  font-weight: 400;
 }
 
 @font-face {
@@ -82,8 +77,8 @@ input:focus {
 }
 
 .loader {
-  width: 20rem;
-  height: 20rem;
+  width: 10rem;
+  height: 10rem;
   border: 1.6rem solid $light-sand-yellow;
   border-radius: 50%;
   border-top: 1.6rem solid $dark-orange;
