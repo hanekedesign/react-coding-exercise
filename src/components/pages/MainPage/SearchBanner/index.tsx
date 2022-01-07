@@ -1,21 +1,44 @@
-import { FC } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import Button from "../../../common/Button";
 import SearchField from "../../../common/SearchField";
 import "./index.scss";
 import tours from "./tours.png";
 import rocket from "./rocket.svg";
+interface SearchBannerProps {
+  missionName: string;
+  setMissionName: Dispatch<SetStateAction<string>>;
+}
 
-interface SearchBannerProps {}
+const SearchBanner: FC<SearchBannerProps> = ({
+  missionName,
+  setMissionName,
+}) => {
+  const [searchFieldState, setSearchFieldState] = useState<string>("");
 
-const SearchBanner: FC<SearchBannerProps> = () => {
+  const handleChangeInputValue = (e: { target: { value: string } }) => {
+    const targetValue = e.target.value;
+    setSearchFieldState(targetValue);
+  };
+
   return (
     <div className="search-banner">
       <img className="search-banner__logo" src={tours} alt="space tours" />
       <div className="search-banner__search-field-wrapper">
-        <SearchField icon={rocket} />
+        <SearchField
+          onChange={handleChangeInputValue}
+          value={searchFieldState}
+          icon={rocket}
+        />
       </div>
       <div className="search-banner__search-button-wrapper">
-        <Button>SEARCH</Button>
+        <Button
+          onClick={() => {
+            console.log(searchFieldState)
+            setMissionName(searchFieldState);
+          }}
+        >
+          SEARCH
+        </Button>
       </div>
     </div>
   );

@@ -5,8 +5,8 @@ import MissionsTable from "./MissionsTable";
 import SearchBanner from "./SearchBanner/index";
 
 const LAUNCHES = gql`
-  query GetLaunches {
-    launchesPast(limit: 6, offset: 0) {
+  query GetLaunches($pageOffset: Int!, $missionName: String) {
+    launchesPast(limit: 6, offset: $pageOffset, find: {mission_name: $missionName}) {
       mission_name
       rocket {
         rocket_name
@@ -20,23 +20,28 @@ const LAUNCHES = gql`
 
 const MainPage = () => {
   const [pageOffset, setPageOffset] = useState<number>(0);
+  const [missionName, setMissionName] = useState<string>("");
   const { loading, error, data } = useQuery(LAUNCHES, {
-    variables: { offset: pageOffset },
+    variables: { pageOffset, missionName },
   });
+  console.log(pageOffset);
 
   return (
     <div className="app-container">
-      {loading && <p>Loading...</p>}
-      {error && <p>Error...</p>}
-      {data && (
-        <div className="app-container__content app-container__content--main-page">
+      <div className="app-container__content app-container__content--main-page">
+        {loading && <div className="loader"></div>}
+        {error && <p>Error...</p>}
+        {data && (
           <div className="main-page-content">
-            <SearchBanner />
-            <MissionsTable data={data.launchesPast} />
-            
+            <SearchBanner missionName={missionName} setMissionName={setMissionName} />
+            <MissionsTable
+              pageOffset={pageOffset}
+              setPageOffset={setPageOffset}
+              data={data.launchesPast}
+            />
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

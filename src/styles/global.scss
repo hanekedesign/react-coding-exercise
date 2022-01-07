@@ -1,4 +1,5 @@
 @import "./functions.scss";
+@import "./variables.scss";
 
 @font-face {
   font-family: Goldman;
@@ -46,8 +47,11 @@ input:focus {
 .app-container__content {
   width: 136.6rem;
   height: 76.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &--main-page {
-    background: url("./../backgrounds/main.png");
+    background-image: url("./../backgrounds/main.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
     position: relative;
@@ -61,4 +65,18 @@ input:focus {
     width: 100%;
     height: 108rem;
   }
+}
+
+.loader {
+  width: 20rem;
+  height: 20rem;
+  border: 1.6rem solid $light-sand-yellow;
+  border-radius: 50%;
+  border-top: 1.6rem solid $dark-orange;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

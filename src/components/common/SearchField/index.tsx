@@ -3,16 +3,15 @@ import "./index.scss";
 
 interface SearchFieldProps {
   icon: any;
+  value: string;
+  onChange: (e: { target: { value: string } }) => void;
 }
 
-const SearchField: FC<SearchFieldProps> = ({ icon }) => {
+const SearchField: FC<SearchFieldProps> = ({ icon, onChange }) => {
   return (
     <div className="search-field">
       <img className="search-field__icon" src={icon}></img>
-      <input
-        placeholder="Search for flights"
-        className="search-field__input"
-      />
+      <input onChange={onChange} placeholder="Search for flights" className="search-field__input" />
     </div>
   );
 };

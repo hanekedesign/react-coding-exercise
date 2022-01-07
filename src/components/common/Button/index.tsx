@@ -1,10 +1,16 @@
 import { FC } from "react";
-import "./index.scss"
+import "./index.scss";
 
-interface ButtonProps {}
+interface ButtonProps {
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+}
 
-const Button: FC<ButtonProps> = ({ children, ...props }) => {
-  return <button className="button" {...props}>{children}</button>;
+const Button: FC<ButtonProps> = ({ children, onClick, ...props }) => {
+  return (
+    <button onClick={onClick} className="button" {...props}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

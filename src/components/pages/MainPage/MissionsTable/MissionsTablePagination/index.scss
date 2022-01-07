@@ -1,0 +1,21 @@
+.missions-table-pagination {
+  display: flex;
+}
+
+.missions-table-pagination-page {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  min-width: 12rem;
+}
+
+.missions-table-pagination-page__text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.missions-table-pagination-button-wrapper {
+  width: 14.1rem;
+  margin-right: 2rem;
+}
