@@ -3,7 +3,6 @@
   @function calc-vw($pixels) {
     $vw-size: ($pixels * 100) / $scalable-resolution;
     $vw-size-in-px: $vw-size + vw;
-
     @return $vw-size-in-px;
   }
 

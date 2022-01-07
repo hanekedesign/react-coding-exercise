@@ -2,6 +2,7 @@ import { Dispatch, FC, SetStateAction } from "react";
 import { Link } from "react-router-dom";
 import { DataArrayInterface } from "../../../../../interfaces-and-types";
 import "./index.scss";
+
 interface MissionsTableContentProps {
   data: DataArrayInterface;
 }

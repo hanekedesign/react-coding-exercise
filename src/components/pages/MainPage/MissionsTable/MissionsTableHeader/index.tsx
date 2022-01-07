@@ -2,6 +2,7 @@ import { Dispatch, FC, MouseEventHandler, SetStateAction } from "react";
 import "./index.scss";
 import arrow from "./arrow-up.svg";
 import { SortingInterface } from "../../../../../interfaces-and-types";
+
 interface MissionsTableHeaderProps {
   sorting: SortingInterface;
   setSorting: Dispatch<

@@ -5,6 +5,7 @@ import "./index.scss";
 import tours from "./tours.png";
 import rocket from "./rocket.svg";
 import { FilteringInterface } from "../../../../interfaces-and-types";
+
 interface SearchBannerProps {
   filters: FilteringInterface;
   setFilters: Dispatch<SetStateAction<FilteringInterface>>;
