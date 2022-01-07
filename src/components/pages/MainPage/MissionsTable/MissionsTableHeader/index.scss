@@ -50,4 +50,7 @@
   height: 1.38rem;
   margin-left: 1.6rem;
   cursor: pointer;
+  &--down {
+    transform: rotate(180deg);
+  }
 }

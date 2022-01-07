@@ -5,11 +5,18 @@ import MissionsTable from "./MissionsTable";
 import SearchBanner from "./SearchBanner/index";
 
 const LAUNCHES = gql`
-  query GetLaunches($pageOffset: Int!, $missionName: String) {
+  query GetLaunches(
+    $pageOffset: Int!
+    $missionName: String
+    $sortingColumn: String
+    $order: String
+  ) {
     launchesPast(
       limit: 6
       offset: $pageOffset
       find: { mission_name: $missionName }
+      order: $order
+      sort: $sortingColumn
     ) {
       mission_name
       rocket {
@@ -25,6 +32,10 @@ const LAUNCHES = gql`
 const MainPage = () => {
   const [pageOffset, setPageOffset] = useState<number>(0);
   const [missionName, setMissionName] = useState<string>("");
+  const [sorting, setSorting] = useState<{
+    sortingColumn: string;
+    order: string;
+  }>({ sortingColumn: "launch_year", order: "ASC" });
 
   useEffect(() => {
     setPageOffset(0);
@@ -58,6 +69,8 @@ const MainPage = () => {
               <MissionsTable
                 pageOffset={pageOffset}
                 setPageOffset={setPageOffset}
+                sorting={sorting}
+                setSorting={setSorting}
                 data={data.launchesPast}
               />
             </>
