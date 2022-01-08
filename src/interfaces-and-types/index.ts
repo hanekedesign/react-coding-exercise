@@ -2,7 +2,7 @@ export interface SortingInterface {
   sortingColumn: string;
   order: string;
 }
-interface DataInterface {
+export interface DataInterface {
   mission_name: string;
   rocket: {
     rocket_name: string;

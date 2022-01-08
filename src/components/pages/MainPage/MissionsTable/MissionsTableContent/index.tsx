@@ -1,6 +1,6 @@
 import { Dispatch, FC, SetStateAction } from "react";
 import { Link } from "react-router-dom";
-import { DataArrayInterface } from "../../../../../interfaces-and-types";
+import { DataArrayInterface, DataInterface } from "../../../../../interfaces-and-types";
 import "./index.scss";
 
 interface MissionsTableContentProps {
@@ -10,7 +10,7 @@ interface MissionsTableContentProps {
 const MissionsTableContent: FC<MissionsTableContentProps> = ({ data }) => {
   return (
     <>
-      {data.map((el: any) => {
+      {data.map((el: DataInterface) => {
         return (
           <Link className="mission-table-link" to={"/details/" + el.id} key={el.id}>
             <div className="missions-table-content-row">
