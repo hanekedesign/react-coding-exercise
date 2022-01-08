@@ -105,6 +105,7 @@ cursor:pointer;
 
 export const TD = styled.td`
 background:${props => (props.rowHover === props.number ? '#D14B39' : '#fdf2dd')};
+color:${props => (props.rowHover === props.number ? '#fff' : '#193247')};
 padding: 18px;
 border-radius: 10px;
 `
