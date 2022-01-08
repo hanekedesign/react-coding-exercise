@@ -31,7 +31,7 @@ function App() {
   const [isTicket, setTicket] = useState(false);
   const [ticketData, setTicketData] = useState();
   const [isDescending, setDescending] = useState(true);
-  const [column, setColumn] = useState("mission_name");
+  const [column, setColumn] = useState("launch_year");
 
   useEffect(() => {
     executeSearch({ variables: { filter: searchClick, age: isDescending ? "desc" : "asc", column: column } });
