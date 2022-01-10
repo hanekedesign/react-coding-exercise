@@ -70,6 +70,7 @@ font-size: 13px;
 export const Button = styled.img`
 height:28px;
 cursor: pointer;
+display:${props => props.end ? 'none' : ''}
 `
 
 export const Table = styled.table`

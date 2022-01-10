@@ -117,7 +117,7 @@ function App() {
             }
             <PageCount>
               <Count>{pageEnd / 6}&nbsp;of&nbsp;{missions ? Math.ceil(missions.length / 6) : 0}</Count>
-              <Button onClick={() => { setPageStart(pageStart + 6); setPageEnd(pageEnd + 6) }} disabled={pageEnd < missions?.length ? false : true} src={loadMore} />
+              <Button onClick={() => { setPageStart(pageStart + 6); setPageEnd(pageEnd + 6) }} end={pageEnd < missions?.length ? false : true} src={loadMore} />
             </PageCount>
 
           </Wrapper>
