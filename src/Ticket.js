@@ -1,6 +1,7 @@
 import { TicketBackground, MainTicket, TicketWrapper, BackArrow, Button, TicketData, MissionName, RocketName, RocketType, LaunchYear, MissionTitle, RocketTitle, RocketTypeTitle, LaunchYearTitle, PrintWrap } from "./styles";
 import mainTicket from './img/mainticket.svg';
-import backArrow from './img/arrow-back.svg'
+import backArrow from './img/arrow-back.svg';
+import printTicket from './img/print-ticket.png'
 
 
 
@@ -22,7 +23,7 @@ function Ticket(props) {
                     <MainTicket src={mainTicket} />
                 </TicketData>
                 <PrintWrap>
-                    <Button>PRINT TICKET</Button>
+                    <Button src={printTicket} />
                 </PrintWrap>
 
             </TicketWrapper>

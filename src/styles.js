@@ -67,17 +67,9 @@ font-size: 13px;
 &:focus {outline: none;}
 `
 
-export const Button = styled.button`
+export const Button = styled.img`
 height:28px;
-background:#D14B39;
-font-size: 14px;
-color:white;
-border:none;
-border-radius: 15px;
-cursor:pointer;
-padding: 6px 30px;;
-width:auto;
-font-family: "Roboto Bold", sans-serif;
+cursor: pointer;
 `
 
 export const Table = styled.table`
@@ -92,6 +84,7 @@ color: #193247;
     width: 25%;
 }& tr td:nth-child(3){
     width: 15%;
+    text-align:center;
 }& tr td:nth-child(4){
     width: 13%;
     text-align:center;
@@ -106,7 +99,8 @@ cursor:pointer;
 export const TD = styled.td`
 background:${props => (props.rowHover === props.number ? '#D14B39' : '#fdf2dd')};
 color:${props => (props.rowHover === props.number ? '#fff' : '#193247')};
-padding: 18px;
+font-weight:${props => (props.rowHover === props.number ? 'bold' : 'normal')};
+padding: 22px;
 border-radius: 10px;
 `
 export const Loading = styled.div`
@@ -145,6 +139,7 @@ export const BackArrow = styled.img`
 cursor:pointer;
 width: 3%;
 padding: 20px;
+margin-top: 28px;
 `
 
 export const TicketData = styled.div`
@@ -156,14 +151,15 @@ export const MissionTitle = styled.div`
 position: absolute;
 top: 29%;
 left: 14%;
+font-size: 18px;
 `
 
 export const MissionName = styled.div`
 position: absolute;
 top: 33%;
 left: 14%;
-font-size: 30px;
-font-family:"Roboto Thin";
+font-size: 40px;
+font-family:"Roboto Light";
 `
 
 export const RocketTitle = styled.div`
@@ -199,7 +195,8 @@ position: absolute;
 top: 23%;
 left: 79%;
 color: #193247;
-font-size:25px;
+font-size:30px;
+font-family:"Roboto Light";
 `
 
 
@@ -216,34 +213,41 @@ color:#193247;
 `
 
 export const MissionLabel = styled.div`
+position: relative;
 width: 34%;
-border-bottom:${props => props.picked ? '4px solid #193247' : '1px solid #193247'} ;
-padding: 0px 0 3px 5px;
+border-bottom:1px solid #193247;
+padding: 0px 0 5px 5px;
 `
 export const SortArrow = styled.img`
 transform:${props => (!props.flipped ? 'rotate(180deg) translateY(-3px)' : ' translateY(3px)')};
 margin-left: 10px;
+margin-bottom:2px;
 cursor:pointer;
 display:${props => props.picked ? '' : 'none'};
 `
 export const RocketLabel = styled.div`
+position: relative;
 width: 29%;
-padding: 0px 0 3px 5px;
-border-bottom:${props => props.picked ? '4px solid #193247' : '1px solid #193247'};
+padding: 0px 0 5px 5px;
+border-bottom:1px solid #193247;
 
 `
 export const TypeLabel = styled.div`
+position: relative;
 width: 17.5%;
-padding: 0px 0 3px 5px;
-border-bottom:${props => props.picked ? '4px solid #193247' : '1px solid #193247'};
+padding: 0px 0 5px 5px;
+border-bottom:1px solid #193247;
 
 `
 
 export const YearLabel = styled.div`
+position: relative;
 width: 15%;
-padding: 0px 0 3px 5px;
-border-bottom:${props => props.picked ? '4px solid #193247' : '1px solid #193247'};
-
+padding: 0px 0 5px 5px;
+border-bottom:1px solid #193247;
+.last-underline{
+width:102%;
+}
 `
 export const SpacerLabel = styled.div`
 width: 2%;
@@ -264,6 +268,21 @@ export const Count = styled.span`
 color:#193247;
 font-weight:bold;
 margin-right:20px;
+`
+export const PageCount = styled.div`
+display:flex;
+align-items:center;
+`
+
+export const UnderlineBar = styled.div`
+position: absolute;
+display:${props => props.picked ? '' : 'none'} ;
+width: 100%;
+height: 6px;
+border-radius:10px;
+background: #193247 ;
+margin-top: 3px;
+margin-left: -7px;
 `
 
 

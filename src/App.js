@@ -1,7 +1,9 @@
-import { Main, Header, Logo, SearchBar, Button, RocketIcon, SearchBarWrapper, Table, TR, TD, Wrapper, Loading, ArrowRight, Labels, SortArrow, MissionLabel, RocketLabel, TypeLabel, YearLabel, Count } from './styles'
+import { Main, Header, Logo, SearchBar, Button, RocketIcon, SearchBarWrapper, Table, TR, TD, Wrapper, Loading, ArrowRight, Labels, SortArrow, MissionLabel, RocketLabel, TypeLabel, YearLabel, Count, PageCount, UnderlineBar } from './styles'
 import { useState, useEffect } from 'react';
 import Ticket from './Ticket';
 import logo from './img/logo.svg';
+import searchButton from './img/search-button.png'
+import loadMore from './img/load-more.png'
 import rocket from './img/rocket.svg';
 import arrowDown from './img/arrow-down.svg'
 import rightArrow from './img/arrow-right.svg'
@@ -63,25 +65,29 @@ function App() {
                   value={searchFlights}
                   onKeyPress={(e) => { if (e.key === 'Enter') handleSearch() }} />
               </SearchBarWrapper>
-              <Button onClick={handleSearch}>SEARCH</Button>
+              <Button onClick={handleSearch} src={searchButton} />
             </Header>
 
             <Labels onClick={() => setDescending(!isDescending)}>
-              <MissionLabel onClick={() => setColumn("mission_name")} picked={column === "mission_name" ? true : false}>
+              <MissionLabel onClick={() => setColumn("mission_name")} >
                 MISSION NAME
                 <SortArrow src={arrowDown} flipped={isDescending} picked={column === "mission_name" ? true : false} />
+                <UnderlineBar picked={column === "mission_name" ? true : false} />
               </MissionLabel>
-              <RocketLabel onClick={() => setColumn("rocket_name")} picked={column === "rocket_name" ? true : false}>
+              <RocketLabel onClick={() => setColumn("rocket_name")}>
                 ROCKET NAME
                 <SortArrow src={arrowDown} flipped={isDescending} picked={column === "rocket_name" ? true : false} />
+                <UnderlineBar picked={column === "rocket_name" ? true : false} />
               </RocketLabel>
-              <TypeLabel onClick={() => setColumn("rocket_type")} picked={column === "rocket_type" ? true : false}>
+              <TypeLabel onClick={() => setColumn("rocket_type")} >
                 ROCKET TYPE
                 <SortArrow src={arrowDown} flipped={isDescending} picked={column === "rocket_type" ? true : false} />
+                <UnderlineBar picked={column === "rocket_type" ? true : false} />
               </TypeLabel>
-              <YearLabel onClick={() => setColumn("launch_year")} picked={column === "launch_year" ? true : false}>
+              <YearLabel onClick={() => setColumn("launch_year")}>
                 LAUNCH YEAR
                 <SortArrow src={arrowDown} flipped={isDescending} picked={column === "launch_year" ? true : false} />
+                <UnderlineBar className="last-underline" picked={column === "launch_year" ? true : false} />
               </YearLabel>
             </Labels>
 
@@ -109,10 +115,10 @@ function App() {
               </Table>
               : <Loading>Loading...</Loading>
             }
-            <div>
+            <PageCount>
               <Count>{pageEnd / 6}&nbsp;of&nbsp;{missions ? Math.ceil(missions.length / 6) : 0}</Count>
-              <Button onClick={() => { setPageStart(pageStart + 6); setPageEnd(pageEnd + 6) }} disabled={pageEnd < missions?.length ? false : true}>LOAD MORE</Button>
-            </div>
+              <Button onClick={() => { setPageStart(pageStart + 6); setPageEnd(pageEnd + 6) }} disabled={pageEnd < missions?.length ? false : true} src={loadMore} />
+            </PageCount>
 
           </Wrapper>
         </Main>
