@@ -22,8 +22,8 @@ Designs can be found [here](https://zpl.io/VqzRXd6). An invite is need to access
 
 # Setup and Development
 
-1. Fork this repo `git@github.com:edgeandnode/interview-challenge.git`
-2. Make sure you are inside of the repo you just cloned, by running `cd interview-challenge`
+1. Fork this repo `git@github.com:hanekedesign/react-coding-exercise.git`
+2. Make sure you are inside of the repo you just cloned, by running `cd react-coding-exercise`
 3. Run `yarn` to install all dependencies
 4. Run `yarn start` to start the app
 5. Open `http://localhost:3000` in your browser
