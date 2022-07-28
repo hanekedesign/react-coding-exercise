@@ -2,16 +2,17 @@
 
 This is a React app interview challenge. Please fork this repo, and push your code to a branch in your forked repo (following the instructions below).
 
-In this exercise you will create a spacex launch table that has sorting, search and pagination. Data will be available at the endpoint provided in the .env file. _Note_: It is not required to finish implementing all the features. 
+In this exercise you will create a spacex launch table that has sorting, search and pagination. Data will be available at the endpoint provided in the .env file. _Note_: It is not required to finish implementing all the features.
 
-First off, look at the [protype](https://xd.adobe.com/view/ce0869f5-92d2-45f6-8ac4-774275ee78e0-9b5b/?fullscreen) to see what the end result should look like.
+First off, look at the [prototype](https://xd.adobe.com/view/ce0869f5-92d2-45f6-8ac4-774275ee78e0-9b5b/?fullscreen) to see what the end result should look like.
 
-Designs can be found [here](https://zpl.io/VqzRXd6). An invite is need to access them. Please provide an email you would like to use for the invite. 
+Designs can be found [here](https://zpl.io/VqzRXd6). An invite is need to access them. Please provide an email you would like to use for the invite.
+The assets are available in the [assets folder](assets).
 
 1. You can find the playground to see the schema and make queries [here](https://api.spacex.land/graphql/).
 2. For this challenge we will query the Entity called `launchesPast`.
 3. After you get all of the past launches, render them in a table with the columns as in Designs.
-4. Clicking a row of the table should take you to a detail screen of that launch. 
+4. Clicking a row of the table should take you to a detail screen of that launch.
 5. All columns should be sortable in `asc/desc` order. Default order should be by Launch's `launch_year`. Make use of GraphQL queries.
 6. Search should only be implemented for Launch's `mission_name`. Make sure to use a GraphQL query.
 
