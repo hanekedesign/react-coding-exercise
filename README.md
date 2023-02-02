@@ -9,7 +9,7 @@ First off, look at the [prototype](https://xd.adobe.com/view/ce0869f5-92d2-45f6-
 Designs can be found [here](https://zpl.io/VqzRXd6). An invite is need to access them. Please provide an email you would like to use for the invite.
 The assets are available in the [assets folder](assets).
 
-1. You can find the playground to see the schema and make queries [here](https://api.spacex.land/graphql/).
+1. You can find the playground to see the schema and make queries [here](https://studio.apollographql.com/public/spacex-l4uc6p/explorer?variant=main).
 2. For this challenge we will query the Entity called `launchesPast`.
 3. After you get all of the past launches, render them in a table with the columns as in Designs.
 4. Clicking a row of the table should take you to a detail screen of that launch.
